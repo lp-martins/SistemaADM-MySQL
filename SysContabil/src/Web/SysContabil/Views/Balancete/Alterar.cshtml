@@ -1,0 +1,52 @@
+﻿@model SysContabil.Models.LancamentoViewModel
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<h2>Alterar Lançamento</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Alterar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataDoPlano" class="control-label"></label>
+                <input type="date" asp-for="DataDoPlano" class="form-control" />
+                <span asp-validation-for="DataDoPlano" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Debito" class="control-label"></label>
+                <input asp-for="Debito" class="form-control" />
+                <span asp-validation-for="Debito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Credito" class="control-label"></label>
+                <input asp-for="Credito" class="form-control" />
+                <span asp-validation-for="Credito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReciboFiscal" class="control-label"></label>
+                <input asp-for="ReciboFiscal" class="form-control" />
+                <span asp-validation-for="ReciboFiscal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar Alterações" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-dark" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

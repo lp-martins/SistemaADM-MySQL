@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SysContabil.Models.LancamentoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Balancete dos Lançamentos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataDoPlano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Debito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Credito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReciboFiscal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDoPlano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Debito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReciboFiscal)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Alterar", new { id = item.Id }) |
+                @Html.ActionLink("Detalhar", "Detalhar", new { id = item.Id }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
