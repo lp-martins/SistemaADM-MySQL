@@ -23,10 +23,6 @@ namespace SysContabil.Controllers
             _excluirPlanoDeConta = new ExcluirPlanoDeConta(planoDeContaRepository);
             _consulstarPlanoDeConta = new ConsultarPlanoDeConta(planoDeContaRepository);
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Criar()
         {
             return View();
@@ -39,7 +35,7 @@ namespace SysContabil.Controllers
             {
                 var planoDeConta = PlanoDecontaFactory.MapearPlanoDeConta(planoDeContasViewModel);
                 await _criarPlanoDeConta.Executar(planoDeConta);
-                return RedirectToAction("Index");
+                return RedirectToAction("Criar");
             }
             return View(planoDeContasViewModel);
         }
@@ -48,7 +44,7 @@ namespace SysContabil.Controllers
             var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Criar");
             }
             var planoDeContaViewModel = PlanoDecontaFactory.MapearPlanoDeContaViewModel(planoDeConta);
             return View(planoDeContaViewModel);
@@ -63,14 +59,14 @@ namespace SysContabil.Controllers
             }
             var planoDeConta = PlanoDecontaFactory.MapearPlanoDeConta(planoDeContasViewModel);
             await _alterarPlanoDeConta.Executar(id, planoDeConta);
-            return RedirectToAction("Index");
+            return RedirectToAction("Criar");
         }
         public async Task<IActionResult> Detalhar(string id)
         {
             var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Criar");
             }
             var planoDeContaViewModel = PlanoDecontaFactory.MapearPlanoDeContaViewModel(planoDeConta);
             return View(planoDeContaViewModel);
@@ -80,10 +76,10 @@ namespace SysContabil.Controllers
             var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Criar");
             }
             await _excluirPlanoDeConta.Executar(planoDeConta);
-            return RedirectToAction("Index");
+            return RedirectToAction("Criar");
         }
     }
 }

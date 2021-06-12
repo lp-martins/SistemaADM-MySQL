@@ -15,10 +15,6 @@ namespace SysContabil.Controllers
         {
             _criarLancamento = new CriarLancamento(lancamentoRepository);
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
         public IActionResult Criar()
         {
             return View();
@@ -31,7 +27,7 @@ namespace SysContabil.Controllers
             {
                 var lancamento = LancamentoFactory.MapearLancamento(lancamentoViewModel);
                 await _criarLancamento.Executar(lancamento);
-                return RedirectToAction("Index");
+                return RedirectToAction("Criar");
             }
             return View(lancamentoViewModel);
         }

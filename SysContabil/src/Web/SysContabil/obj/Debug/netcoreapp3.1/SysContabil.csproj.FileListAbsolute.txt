@@ -835,9 +835,7 @@ C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\De
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Balancete\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Criar.cshtml.g.cs
-C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\PlanoDeContas\Criar.cshtml.g.cs
-C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\PlanoDeContas\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
