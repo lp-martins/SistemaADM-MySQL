@@ -33,7 +33,7 @@ namespace SysContabil.Controllers
                 var planoDeConta = PlanoDecontaFactory.MapearPlanoDeConta(planoDeContasViewModel);
                 await _criarPlanoDeConta.Executar(planoDeConta);
                 TempData["Mensagem"] = "Salvo com sucesso!";
-                return RedirectToAction("Criar");
+                return View(planoDeContasViewModel);
             }
             return View(planoDeContasViewModel);
         }

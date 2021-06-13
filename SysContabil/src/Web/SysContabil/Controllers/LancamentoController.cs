@@ -27,7 +27,7 @@ namespace SysContabil.Controllers
                 var lancamento = LancamentoFactory.MapearLancamento(lancamentoViewModel);
                 await _criarLancamento.Executar(lancamento);
                 TempData["Mensagem"] = "Salvo com sucesso!";
-                return RedirectToAction("Criar");
+                return View(lancamentoViewModel);
             }
             return View(lancamentoViewModel);
         }
