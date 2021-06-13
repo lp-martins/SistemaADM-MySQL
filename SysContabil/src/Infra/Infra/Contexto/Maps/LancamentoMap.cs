@@ -17,5 +17,4 @@ namespace Infra.Contexto.Maps
             builder.Property(x => x.ReciboFiscal).IsRequired().HasColumnType("varchar(25)");
         }
     }
-
 }

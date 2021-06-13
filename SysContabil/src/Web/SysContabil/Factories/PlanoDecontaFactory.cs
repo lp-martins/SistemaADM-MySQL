@@ -10,7 +10,7 @@ namespace SysContabil.Factories
         {
             var planoDeContaViewModel = new PlanoDeContasViewModel
             {
-                NumeroDaConta = planoDeConta.NomeDaConta,
+                NumeroDaConta = planoDeConta.NumeroDaConta,
                 NomeDaConta = planoDeConta.NomeDaConta
             };
             return planoDeContaViewModel;

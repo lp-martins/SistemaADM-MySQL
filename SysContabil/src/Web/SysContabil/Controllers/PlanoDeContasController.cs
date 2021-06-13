@@ -3,9 +3,6 @@ using History.PlanoDeContas;
 using Microsoft.AspNetCore.Mvc;
 using SysContabil.Factories;
 using SysContabil.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SysContabil.Controllers
@@ -35,6 +32,7 @@ namespace SysContabil.Controllers
             {
                 var planoDeConta = PlanoDecontaFactory.MapearPlanoDeConta(planoDeContasViewModel);
                 await _criarPlanoDeConta.Executar(planoDeConta);
+                TempData["Mensagem"] = "Salvo com sucesso!";
                 return RedirectToAction("Criar");
             }
             return View(planoDeContasViewModel);

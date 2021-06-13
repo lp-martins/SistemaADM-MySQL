@@ -1,8 +1,6 @@
 ﻿using Dominio.Entidades;
 using Dominio.IRepositories;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace History.Lancamentos
