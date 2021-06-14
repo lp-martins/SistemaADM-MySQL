@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SysContabil.Models.PlanoDeContasViewModel>
+@{
+    ViewData["Title"] = "ListarContas";
+}
+
+<h1>Editar contas</h1>
+
+<p>
+    <a class="btn btn-dark" asp-action="Criar">Voltar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroDaConta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDaConta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroDaConta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDaConta)
+            </td>
+            <td>
+                <div class="btn btn-outline-success">
+                    @Html.ActionLink("Alterar", "Alterar", new { id = item.NumeroDaConta })
+                </div>
+                 |||
+                <div class="btn btn-outline-danger">
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.NumeroDaConta })
+                </div>                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

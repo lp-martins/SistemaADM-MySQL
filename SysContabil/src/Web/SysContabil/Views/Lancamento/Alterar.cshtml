@@ -1,18 +1,19 @@
 ﻿@model SysContabil.Models.LancamentoViewModel
 
 @{
-    ViewData["Title"] = "Criar";
+    ViewData["Title"] = "Alterar";
 }
-<h2>Novo lançamento</h2>
+
+<h1>Alterar Lançamento</h1>
 
 <hr />
 <div class="row">
-    <div class="col-md-7">
-        <form asp-action="Criar">
+    <div class="col-md-4">
+        <form asp-action="Alterar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DataDoPlano" class="control-label"></label>
-                <input type="date" asp-for="DataDoPlano" class="form-control" />
+                <input asp-for="DataDoPlano" class="form-control" />
                 <span asp-validation-for="DataDoPlano" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,30 +36,14 @@
                 <input asp-for="ReciboFiscal" class="form-control" />
                 <span asp-validation-for="ReciboFiscal" class="text-danger"></span>
             </div>
-            <div class="text-success text-center">
-                @if (TempData["Mensagem"] != null)
-                {
-                <div class="text-success">
-                    <hr />
-                    @TempData["Mensagem"]
-                    <hr />
+            <div class="row  text-center">
+                <div class="col-md-6">
+                    <a class="btn btn-dark" asp-action="ListarLancamentos">Voltar</a>
                 </div>
-                }
-            </div>
-            <div class="row text-center">
-                <div class="col-md-3">
-                    <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Voltar</a>
+                <div class="col-md-6">
+                    <input type="submit" value="Salvar Alterações" class="btn btn-success" />
                 </div>
-                <div class="col-md-2">
-                    <input type="submit" value="Salvar" class="btn btn-success" />
-                </div>
-                <div class="col-md-3">
-                    <a type="button" class="btn btn-outline-primary" asp-controller="Lancamento" asp-action="Criar">Novo</a>
-                </div>
-                <div class="col-md-4">
-                    <a type="button" class="btn btn-outline-info" asp-controller="Lancamento" asp-action="ListarLancamentos">Ver Lançamentos</a>
-                </div>
-            </div>
+            </div>              
         </form>
     </div>
 </div>

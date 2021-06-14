@@ -845,3 +845,8 @@ C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\De
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.Views.pdb
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.csproj.CopyComplete
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.genruntimeconfig.cache
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\PlanoDeContas\ListarContas.cshtml.g.cs
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\PlanoDeContas\Alterar.cshtml.g.cs
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\ListarLancamentos.cshtml.g.cs
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Alterar.cshtml.g.cs
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Detalhar.cshtml.g.cs

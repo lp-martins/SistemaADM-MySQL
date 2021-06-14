@@ -12,13 +12,13 @@ namespace SysContabil.Controllers
         private readonly CriarPlanoDeConta _criarPlanoDeConta;
         private readonly AlterarPlanoDeConta _alterarPlanoDeConta;
         private readonly ExcluirPlanoDeConta _excluirPlanoDeConta;
-        private readonly ConsultarPlanoDeConta _consulstarPlanoDeConta;
+        private readonly ConsultarPlanoDeConta _consultarPlanoDeConta;
         public PlanoDeContasController(IPlanoDeContaRepository planoDeContaRepository)
         {
             _criarPlanoDeConta = new CriarPlanoDeConta(planoDeContaRepository);
             _alterarPlanoDeConta = new AlterarPlanoDeConta(planoDeContaRepository);
             _excluirPlanoDeConta = new ExcluirPlanoDeConta(planoDeContaRepository);
-            _consulstarPlanoDeConta = new ConsultarPlanoDeConta(planoDeContaRepository);
+            _consultarPlanoDeConta = new ConsultarPlanoDeConta(planoDeContaRepository);
         }
         public IActionResult Criar()
         {
@@ -37,9 +37,15 @@ namespace SysContabil.Controllers
             }
             return View(planoDeContasViewModel);
         }
+        public async Task<IActionResult> ListarContas()
+        {
+            var listaPlanoDeContas = await _consultarPlanoDeConta.ListarTodosPlanoDeContas();
+            var listaPlanoDeContasViewModel = PlanoDecontaFactory.MapearListaPlanoDeContasViewModel(listaPlanoDeContas);
+            return View(listaPlanoDeContasViewModel);
+        }
         public async Task<IActionResult> Alterar(string id)
         {
-            var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
+            var planoDeConta = await _consultarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
                 return RedirectToAction("Criar");
@@ -57,11 +63,11 @@ namespace SysContabil.Controllers
             }
             var planoDeConta = PlanoDecontaFactory.MapearPlanoDeConta(planoDeContasViewModel);
             await _alterarPlanoDeConta.Executar(id, planoDeConta);
-            return RedirectToAction("Criar");
+            return RedirectToAction("ListarContas");
         }
         public async Task<IActionResult> Detalhar(string id)
         {
-            var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
+            var planoDeConta = await _consultarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
                 return RedirectToAction("Criar");
@@ -71,13 +77,13 @@ namespace SysContabil.Controllers
         }
         public async Task<IActionResult> Excluir(string id)
         {
-            var planoDeConta = await _consulstarPlanoDeConta.BuscarPeloId(id);
+            var planoDeConta = await _consultarPlanoDeConta.BuscarPeloId(id);
             if(planoDeConta == null)
             {
-                return RedirectToAction("Criar");
+                return RedirectToAction("ListarContas");
             }
             await _excluirPlanoDeConta.Executar(planoDeConta);
-            return RedirectToAction("Criar");
+            return RedirectToAction("ListarContas");
         }
     }
 }
