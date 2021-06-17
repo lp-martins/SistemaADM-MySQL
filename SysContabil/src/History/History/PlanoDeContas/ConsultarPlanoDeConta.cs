@@ -16,6 +16,10 @@ namespace History.PlanoDeContas
         {
             return await _planoDeContaRepository.BuscaPorId(id);
         }
+        public async Task<PlanoDeConta> BuscarPeloNome(string nomeDaConta)
+        {
+            return await _planoDeContaRepository.BuscarPorNome(nomeDaConta);
+        }
         public async Task<IEnumerable<PlanoDeConta>> ListarTodosPlanoDeContas()
         {
             return await _planoDeContaRepository.ListarTodosPlanoDeContas();

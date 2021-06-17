@@ -6,6 +6,10 @@ namespace Dominio.Entidades
 {
     public class PlanoDeConta
     {
+        public PlanoDeConta(string nomeDaConta)
+        {
+            NomeDaConta = nomeDaConta;
+        }
         public PlanoDeConta(string numeroDaConta, string nomeDaConta)
         {
             NumeroDaConta = numeroDaConta;

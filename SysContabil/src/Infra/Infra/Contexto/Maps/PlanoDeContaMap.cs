@@ -12,8 +12,6 @@ namespace Infra.Contexto.Maps
             builder.HasKey(x => x.NumeroDaConta);
             builder.Property(x => x.NumeroDaConta).IsRequired().HasColumnType("varchar(12)");
             builder.Property(x => x.NomeDaConta).IsRequired().HasColumnType("varchar(50)");
-
-            builder.HasMany(x => x.Lancamentos).WithOne(x => x.PlanoDeConta);
         }
     }
 }

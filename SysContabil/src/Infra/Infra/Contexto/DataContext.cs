@@ -1,9 +1,6 @@
 ﻿using Dominio.Entidades;
 using Infra.Contexto.Maps;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Infra.Contexto
 {
@@ -12,7 +9,6 @@ namespace Infra.Contexto
         public DataContext(DbContextOptions<DataContext> options): base(options)
         {
         }
-
         public DbSet<Lancamento> Lancamentos { get; set; }
         public DbSet<PlanoDeConta> PlanoDeContas { get; set; }
 
@@ -20,7 +16,6 @@ namespace Infra.Contexto
         {
             modelbuilder.ApplyConfiguration(new LancamentoMap());
             modelbuilder.ApplyConfiguration(new PlanoDeContaMap());
-            //modelbuilder.Entity<PlanoDeConta>().HasForeignKey(x => PlanoDeContaID);
         }
     }
 }

@@ -34,6 +34,11 @@ namespace Infra.Persistencias
             var planoDeConta = await _dataContext.PlanoDeContas.FirstOrDefaultAsync(x => x.NumeroDaConta == id);
             return planoDeConta;
         }
+        public async Task<PlanoDeConta> BuscarPorNome(string nomeDaConta)
+        {
+            var nomeDasContas = await _dataContext.PlanoDeContas.FirstOrDefaultAsync(x => x.NomeDaConta == nomeDaConta);
+            return nomeDasContas;
+        }
         public async Task<IEnumerable<PlanoDeConta>> ListarTodosPlanoDeContas()
         {
             return await _dataContext.PlanoDeContas.AsNoTracking().ToListAsync();

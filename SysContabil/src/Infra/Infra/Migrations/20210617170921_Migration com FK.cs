@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class CriacaoDoBancoETabelas : Migration
+    public partial class MigrationcomFK : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,17 +37,17 @@ namespace Infra.Migrations
                 {
                     table.PrimaryKey("PK_Lancamentos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Lancamentos_PlanoDeContas_PlanoDeContaID",
-                        column: x => x.PlanoDeContaID,
+                        name: "FK_Lancamentos_PlanoDeContas_Credito",
+                        column: x => x.Credito,
                         principalTable: "PlanoDeContas",
                         principalColumn: "NumeroDaConta",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lancamentos_PlanoDeContaID",
+                name: "IX_Lancamentos_Credito",
                 table: "Lancamentos",
-                column: "PlanoDeContaID");
+                column: "Credito");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
