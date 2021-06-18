@@ -15,6 +15,6 @@ namespace SysContabil.Models
         public string NumeroDaConta { get; set; }
 
         [DisplayName("Saldo:")]
-        public double Saldo { get; set; }
+        public decimal Saldo { get; set; }
     }
 }

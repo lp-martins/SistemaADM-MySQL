@@ -16,7 +16,7 @@ namespace Infra.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     NomeDaConta = table.Column<string>(type: "varchar(40)", nullable: false),
                     NumeroDaConta = table.Column<string>(type: "varchar(12)", nullable: false),
-                    Saldo = table.Column<decimal>(type: "decimal", nullable: false)
+                    Saldo = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
                 },
                 constraints: table =>
                 {
