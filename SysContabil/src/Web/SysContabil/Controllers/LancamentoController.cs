@@ -62,11 +62,6 @@ namespace SysContabil.Controllers
             var listaLancamentosViewModel = LancamentoFactory.MapearListaLancamentoViewModel(listaLancamentos);
             return View(listaLancamentosViewModel);
         }
-        public async Task<IActionResult> ListarBalancete()
-        {
-            string query = "SELECT Debito, SUM(Valor) as 'Valor Total' FROM lancamentos GROUP BY Debito";
-            return View();
-        }
         public async Task<IActionResult> Alterar(int id)
         {
             var lancamento = await _consultarLancamento.BuscarPeloId(id);

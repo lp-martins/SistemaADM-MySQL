@@ -20,7 +20,7 @@ namespace Dominio.Entidades
         public string Debito { get; private set; }
         public string Credito { get; private set; }
         public double Valor { get; private set; }
-        public string ReciboFiscal { get; set; }
+        public string ReciboFiscal { get; private set; }
 
         public string PlanoDeContaID { get; private set; }
         public PlanoDeConta PlanoDeConta { get; private set; }

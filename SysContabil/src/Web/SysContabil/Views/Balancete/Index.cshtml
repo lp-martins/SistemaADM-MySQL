@@ -1,27 +1,25 @@
-﻿@model IEnumerable<SysContabil.Models.LancamentoViewModel>
+﻿@model IEnumerable<SysContabil.Models.BalanceteViewModel>
 
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Balancete dos Lançamentos</h1>
 
+<h1>Balancete</h1>
+
+<p>
+    <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Voltar</a>
+</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DataDoPlano)
+                @Html.DisplayNameFor(model => model.NomeDaConta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Debito)
+                @Html.DisplayNameFor(model => model.NumeroDaConta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Credito)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Valor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReciboFiscal)
+                @Html.DisplayNameFor(model => model.Saldo)
             </th>
             <th></th>
         </tr>
@@ -30,24 +28,13 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DataDoPlano)
+                @Html.DisplayFor(modelItem => item.NomeDaConta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Debito)
+                @Html.DisplayFor(modelItem => item.NumeroDaConta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Credito)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReciboFiscal)
-            </td>
-            <td>
-                @Html.ActionLink("Alterar", "Alterar", new { id = item.Id }) |
-                @Html.ActionLink("Detalhar", "Detalhar", new { id = item.Id }) |
-                @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+                @Html.DisplayFor(modelItem => item.Saldo)
             </td>
         </tr>
 }

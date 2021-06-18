@@ -4,20 +4,42 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class MigrationcomFK : Migration
+    public partial class MigrationcomBalancete : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Balancetes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    NomeDaConta = table.Column<string>(type: "varchar(40)", nullable: false),
+                    NumeroDaConta = table.Column<string>(type: "varchar(12)", nullable: false),
+                    Saldo = table.Column<decimal>(type: "decimal", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Balancetes", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "PlanoDeContas",
                 columns: table => new
                 {
                     NumeroDaConta = table.Column<string>(type: "varchar(12)", nullable: false),
-                    NomeDaConta = table.Column<string>(type: "varchar(50)", nullable: false)
+                    NomeDaConta = table.Column<string>(type: "varchar(50)", nullable: false),
+                    BalanceteId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_PlanoDeContas", x => x.NumeroDaConta);
+                    table.ForeignKey(
+                        name: "FK_PlanoDeContas_Balancetes_BalanceteId",
+                        column: x => x.BalanceteId,
+                        principalTable: "Balancetes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,6 +70,11 @@ namespace Infra.Migrations
                 name: "IX_Lancamentos_Credito",
                 table: "Lancamentos",
                 column: "Credito");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PlanoDeContas_BalanceteId",
+                table: "PlanoDeContas",
+                column: "BalanceteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -57,6 +84,9 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "PlanoDeContas");
+
+            migrationBuilder.DropTable(
+                name: "Balancetes");
         }
     }
 }

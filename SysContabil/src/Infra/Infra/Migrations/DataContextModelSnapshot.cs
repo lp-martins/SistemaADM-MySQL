@@ -17,6 +17,28 @@ namespace Infra.Migrations
                 .HasAnnotation("ProductVersion", "3.1.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("Dominio.Entidades.Balancete", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeDaConta")
+                        .IsRequired()
+                        .HasColumnType("varchar(40)");
+
+                    b.Property<string>("NumeroDaConta")
+                        .IsRequired()
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<decimal>("Saldo")
+                        .HasColumnType("decimal");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Balancetes");
+                });
+
             modelBuilder.Entity("Dominio.Entidades.Lancamento", b =>
                 {
                     b.Property<int>("Id")
@@ -56,11 +78,16 @@ namespace Infra.Migrations
                     b.Property<string>("NumeroDaConta")
                         .HasColumnType("varchar(12)");
 
+                    b.Property<int?>("BalanceteId")
+                        .HasColumnType("int");
+
                     b.Property<string>("NomeDaConta")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.HasKey("NumeroDaConta");
+
+                    b.HasIndex("BalanceteId");
 
                     b.ToTable("PlanoDeContas");
                 });
@@ -72,6 +99,13 @@ namespace Infra.Migrations
                         .HasForeignKey("Credito")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Dominio.Entidades.PlanoDeConta", b =>
+                {
+                    b.HasOne("Dominio.Entidades.Balancete", "Balancete")
+                        .WithMany("PlanoDeContas")
+                        .HasForeignKey("BalanceteId");
                 });
 #pragma warning restore 612, 618
         }

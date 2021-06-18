@@ -1,9 +1,20 @@
-﻿namespace SysContabil.Models
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
+
+namespace SysContabil.Models
 {
     public class BalanceteViewModel
     {
+        [HiddenInput]
+        public int Id { get; set; }
+
+        [DisplayName("Nome da conta:")]
         public string NomeDaConta { get; set; }
-        public int NumeroDaConta { get; set; }
-        public string Saldo { get; set; }
+
+        [DisplayName("Número da conta:")]
+        public string NumeroDaConta { get; set; }
+
+        [DisplayName("Saldo:")]
+        public double Saldo { get; set; }
     }
 }

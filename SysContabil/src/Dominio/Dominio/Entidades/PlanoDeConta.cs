@@ -16,8 +16,10 @@ namespace Dominio.Entidades
             NomeDaConta = nomeDaConta;
         }
 
-        public string NumeroDaConta { get; set; }
-        public string NomeDaConta { get; set; }
+        public string NumeroDaConta { get; private set; }
+        public string NomeDaConta { get; private set; }
+
+        public Balancete Balancete { get; private set; }
 
         public IEnumerable<Lancamento> Lancamentos { get; private set; }
 

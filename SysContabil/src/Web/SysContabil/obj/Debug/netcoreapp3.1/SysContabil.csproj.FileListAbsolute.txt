@@ -830,9 +830,6 @@ C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\De
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.TagHelpers.input.cache
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.TagHelpers.output.cache
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\SysContabil.RazorCoreGenerate.cache
-C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Balancete\Alterar.cshtml.g.cs
-C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Balancete\Detalhar.cshtml.g.cs
-C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Balancete\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Criar.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\PlanoDeContas\Criar.cshtml.g.cs
@@ -850,3 +847,4 @@ C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\De
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\ListarLancamentos.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Alterar.cshtml.g.cs
 C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Lancamento\Detalhar.cshtml.g.cs
+C:\Users\MARTINS\Desktop\SistemaADM-MySQL\SysContabil\src\Web\SysContabil\obj\Debug\netcoreapp3.1\Razor\Views\Balancete\Index.cshtml.g.cs
