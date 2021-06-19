@@ -24,7 +24,7 @@ namespace SysContabil.Models
 
         [DisplayName("Valor:")]
         [Required(ErrorMessage = "Este campo é obrigatório!")]
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
 
         [DisplayName("Recibo fiscal:")]
         [Required(ErrorMessage = "Este campo é obrigatório!")]

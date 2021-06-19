@@ -1,6 +1,6 @@
 ﻿using Dominio.IRepositories;
 using History.Balancetes;
-using History.Lancamentos;
+using Infra.Contexto;
 using Microsoft.AspNetCore.Mvc;
 using SysContabil.Factories;
 using System.Threading.Tasks;
@@ -14,6 +14,7 @@ namespace SysContabil.Controllers
         {
             _consultarBalancete = new ConsultarBalancete(balanceteRepository);
         }
+
         public async Task<IActionResult> Index()
         {
             var listaBalancetes = await _consultarBalancete.ListarTodosBalancetes();
